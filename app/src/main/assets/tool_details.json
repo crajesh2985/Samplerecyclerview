@@ -1,0 +1,72 @@
+[{
+	"toolName": "Air compressor",
+	"toolId": 100,
+	"toolItemCount": 2,
+	"toolAvailableCount": 2,
+	"toolBorrowedCount": 0
+},
+	{
+		"toolName": "Alan key set",
+		"toolId": 101,
+		"toolItemCount": 4,
+		"toolAvailableCount": 4,
+		"toolBorrowedCount": 0
+
+	},
+	{
+		"toolName": "Measuring Tape",
+		"toolId": 102,
+		"toolItemCount": 9,
+		"toolAvailableCount": 9,
+		"toolBorrowedCount": 0
+	},
+	{
+		"toolName": "Hammer",
+		"toolId": 103,
+		"toolItemCount": 4,
+		"toolAvailableCount": 4,
+		"toolBorrowedCount": 0
+	},
+	{
+		"toolName": "Welding glasses",
+		"toolId": 104,
+		"toolItemCount": 7,
+		"toolAvailableCount": 7,
+		"toolBorrowedCount": 0
+	},
+	{
+		"toolName": "Welding machine",
+		"toolId": 105,
+		"toolItemCount": 3,
+		"toolAvailableCount": 3,
+		"toolBorrowedCount": 0
+	},
+	{
+		"toolName": "Screwdriver",
+		"toolId": 106,
+		"toolItemCount": 13,
+		"toolAvailableCount": 13,
+		"toolBorrowedCount": 0
+	},
+	{
+		"toolName": "Pliers",
+		"toolId": 107,
+		"toolItemCount": 12,
+		"toolAvailableCount": 12,
+		"toolBorrowedCount": 0
+	},
+	{
+		"toolName": "Cutter",
+		"toolId": 108,
+		"toolItemCount": 15,
+		"toolAvailableCount": 15,
+		"toolBorrowedCount": 0
+	},
+	{
+		"toolName": "Wrench",
+		"toolId": 109,
+		"toolItemCount": 6,
+		"toolAvailableCount": 6,
+		"toolBorrowedCount": 0
+	}
+]

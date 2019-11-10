@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#F73059</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGrey">#CFCFCF</color>
+    <color name="colorBlackGrey">#333333</color>
+    <color name="colorSmokeWhite">#F1F1F1</color>
+
+    <color name="colorPatientStatusCompleted">#28334A</color>
+    <color name="colorPatientStatusWaiting">#FBDE44</color>
+    <color name="colorPatientStatusNotYetArrived">#F65058</color>
+    <color name="colorTabGreen">#009886</color>
+    <color name="colorOnSelectTabYellow">#FFD531</color>
+
+
+
+    <color name="colorTransparentPink">#EEF73059</color>
+    <color name="colorBlack">#000000</color>
+
+</resources>

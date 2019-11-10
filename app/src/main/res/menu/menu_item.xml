@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_queue"
+        android:title="Tool Details"
+        android:icon="@drawable/icons_queue" />
+    <item android:id="@+id/action_new_appointment"
+        android:title="Friends Details"
+        android:icon="@drawable/icons_appointment" />
+</menu>

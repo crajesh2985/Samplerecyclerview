@@ -1,0 +1,46 @@
+[
+  {
+    "tablet_name": "Abacavir Sulfate",
+    "total_days": "5 days",
+    "mSlot": false,
+    "aSlot": true,
+    "eSlot": false,
+    "nSlot": false
+  },
+  {
+    "tablet_name": "Abarelix",
+    "total_days": "5 days",
+    "mSlot": true,
+    "aSlot": false,
+    "eSlot": false,
+    "nSlot": true
+  },{
+  "tablet_name": "Abatacept",
+  "total_days": "5 days",
+  "mSlot": false,
+  "aSlot": true,
+  "eSlot": true,
+  "nSlot": false
+},{
+  "tablet_name": "Abelcet",
+  "total_days": "5 days",
+  "mSlot": false,
+  "aSlot": false,
+  "eSlot": false,
+  "nSlot": true
+},{
+  "tablet_name": "Abilify",
+  "total_days": "5 days",
+  "mSlot": false,
+  "aSlot": true,
+  "eSlot": true,
+  "nSlot": true
+},{
+  "tablet_name": "Abraxane",
+  "total_days": "5 days",
+  "mSlot": true,
+  "aSlot": true,
+  "eSlot": true,
+  "nSlot": true
+}
+]
