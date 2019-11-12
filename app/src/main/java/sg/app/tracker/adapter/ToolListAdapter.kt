@@ -25,6 +25,8 @@ class ToolListAdapter(private val list: MutableList<ToolDetailsEntity>, val clic
 
     override fun onBindViewHolder(holder: ToolListViewHolder, position: Int) {
         val toolDetailsEntity:ToolDetailsEntity = list.get(position)
+
+
         holder.bind(toolDetailsEntity,clickListener)
     }
 

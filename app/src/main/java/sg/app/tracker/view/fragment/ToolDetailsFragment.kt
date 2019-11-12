@@ -10,8 +10,10 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import sg.app.tracker.LoanDetails
 import sg.app.tracker.R
 import sg.app.tracker.adapter.ToolListAdapter
+import sg.app.tracker.dialog.UserInfoDialog
 import sg.app.tracker.room.entity.ToolDetailsEntity
 import sg.app.tracker.viewmodel.ToolDetailsViewModel
 
@@ -32,12 +34,8 @@ class ToolDetailsFragment : Fragment() {
     private val toolDetailsViewModel: ToolDetailsViewModel by viewModel()
 
     private val observer = Observer<MutableList<ToolDetailsEntity>> {
-
-        mAdapter = ToolListAdapter(it, { partItem : ToolDetailsEntity -> partItemClicked(partItem) })
+        mAdapter = ToolListAdapter(it, { toolDetailsEntity : ToolDetailsEntity -> toolItemClicked(toolDetailsEntity) })
         mListRecyclerView.adapter = mAdapter
-
-
-
     }
 
     override fun onCreateView(
@@ -54,8 +52,20 @@ class ToolDetailsFragment : Fragment() {
     }
 
 
-    private fun partItemClicked(toolDetailsEntity : ToolDetailsEntity) {
-        Log.d("TAG","partItemClicked ----- >>>>>> " +toolDetailsEntity.toolName)
+    private fun toolItemClicked(toolDetailsEntity : ToolDetailsEntity) {
+        val ft = fragmentManager?.beginTransaction()
+        val newFragment = UserInfoDialog.newInstance(toolDetailsEntity.toolName, { loanDetail : LoanDetails -> dialogReturn(loanDetail) })
+        if (ft != null) {
+            newFragment.show(ft, "dialog")
+        }
+    }
+
+    private fun dialogReturn(loanDetail : LoanDetails) {
+        Log.d("TAG","loanDetail.toolName   ------  " + loanDetail.toolName)
+        Log.d("TAG","loanDetail.friendName   ------  " + loanDetail.friendName)
+
+
+        toolDetailsViewModel.dataUpdateToolList(loanDetail).observe(this, observer)
 
 
 

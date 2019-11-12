@@ -2,6 +2,9 @@ package sg.app.tracker.room.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.ColumnInfo
+
+
 
 @Entity(tableName = "tool_details")
 data class ToolDetailsEntity(
@@ -25,5 +28,6 @@ data class ToolDetailsEntity(
         }
     }
 }
+
 
 

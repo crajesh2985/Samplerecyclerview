@@ -1,7 +1,12 @@
 package sg.app.tracker.room.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+
+
+
+
 
 @Entity(tableName = "friends_details")
 data class FriendDetailsEntity(
@@ -21,5 +26,3 @@ data class FriendDetailsEntity(
         }
     }
 }
-
-

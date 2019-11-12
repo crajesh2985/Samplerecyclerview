@@ -20,6 +20,7 @@ class SplachActivity : AppCompatActivity() {
 
     private val observer = Observer<Boolean> {
         startActivity(Intent(this@SplachActivity,HomeActivity::class.java))
+        finish()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

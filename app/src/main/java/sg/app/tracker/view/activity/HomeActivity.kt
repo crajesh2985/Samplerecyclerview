@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import sg.app.tracker.R
 import sg.app.tracker.databinding.ActivityHomeBinding
+import sg.app.tracker.view.fragment.FriendDetailsFragment
 import sg.app.tracker.view.fragment.ToolDetailsFragment
 
 
@@ -38,15 +39,18 @@ class HomeActivity : AppCompatActivity() {
 
                 val transaction = supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.main_container, toolDetailsFragment)
-                transaction.addToBackStack(null)
+
                 transaction.commit()
 
 
                 return@OnNavigationItemSelectedListener true
             }
             R.id.action_new_appointment -> {
-                //val appointmentFragment = AppointmentFragment.newInstance()
-                //homeViewModel.openFragment(this,appointmentFragment)
+                val friendDetailsFragment = FriendDetailsFragment.newInstance()
+
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.main_container, friendDetailsFragment)
+                transaction.commit()
 
                 return@OnNavigationItemSelectedListener true
             }

@@ -1,12 +1,9 @@
 package sg.app.tracker.repository
 
 import android.content.Context
-import android.util.Log
 import com.google.gson.Gson
-import sg.app.tracker.response.FriendDetailsResponse
 import sg.app.tracker.room.dao.FriendDetailsDAO
 import sg.app.tracker.room.dao.ToolDetailsDAO
-import sg.app.tracker.room.entity.FriendDetailsEntity
 import sg.app.tracker.room.entity.ToolDetailsEntity
 import java.io.InputStream
 
@@ -17,17 +14,11 @@ class SplashRepository(private val context: Context,
 ) {
 
     suspend fun getWeather(): Boolean {
-        val countDetail = friendDetailsDAO.findFriendDetailsCount()
+        val countDetail = toolDetailsDAO.findToolDetailsCount()
         if(countDetail>0){
             return true
         }else{
             var gson = Gson()
-
-            var friendListStr = readJSONFromAsset(context,"friend_list.json")
-            var friendList:List<FriendDetailsEntity>  =
-                gson.fromJson(friendListStr, Array<FriendDetailsEntity>::class.java).toList()
-            friendDetailsDAO.saveAll(friendList)
-
             var toolDetailStr = readJSONFromAsset(context,"tool_details.json")
             var toolList:List<ToolDetailsEntity>  =
                 gson.fromJson(toolDetailStr, Array<ToolDetailsEntity>::class.java).toList()

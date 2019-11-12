@@ -1,33 +1,24 @@
 package sg.app.tracker.viewholder
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import sg.app.tracker.R
-import sg.app.tracker.databinding.ViewToolDetailsBinding
-import sg.app.tracker.room.entity.ToolDetailsEntity
+import sg.app.tracker.databinding.ViewToolBorrowDetailsBinding
+import sg.app.tracker.room.entity.FriendDetailsEntity
 
 
-class ToolListViewHolder(private val binding: ViewToolDetailsBinding) :
+class ToolBorrowListViewHolder(private val binding: ViewToolBorrowDetailsBinding) :
     RecyclerView.ViewHolder(binding.getRoot()) {
 
     fun bind(
-        toolDetailsEntity: ToolDetailsEntity,
-        clickListener: (ToolDetailsEntity) -> Unit
+        friendDetailsEntity: FriendDetailsEntity,
+        clickListener: (FriendDetailsEntity) -> Unit
     ) {
+        binding.tvToolName.text = friendDetailsEntity.friendBorrowedToolName
 
-        val totalCount = toolDetailsEntity.toolItemCount
-        binding.tvToolName.text = toolDetailsEntity.toolName + "($totalCount)"
-        val availableCount = toolDetailsEntity.toolAvailableCount
-        val borrowedCount = toolDetailsEntity.toolBorrowedCount
+        val bCount = friendDetailsEntity.friendBorrowedItemCount
+        binding.tvToolBorrowCount.text= "Quantity : x$bCount"
 
-        if( borrowedCount != totalCount){
-            binding.btnLoaningOut.visibility = View.VISIBLE
-        }else{
-            binding.btnLoaningOut.visibility = View.GONE
-        }
-       // binding.btnLoaningOut.isEnabled = borrowedCount != totalCount
-
-        when (toolDetailsEntity.toolName) {
+        when (friendDetailsEntity.friendBorrowedToolName) {
             "Air compressor" -> binding.ivToolIcon.setImageResource(R.drawable.ic_air_compressor)
             "Alan key set" -> binding.ivToolIcon.setImageResource(R.drawable.ic_alan_turing)
             "Measuring Tape" -> binding.ivToolIcon.setImageResource(R.drawable.ic_measuring_tape)
@@ -41,14 +32,8 @@ class ToolListViewHolder(private val binding: ViewToolDetailsBinding) :
 
         }
 
-
-        binding.tvToolBorrowCount.text = "Total No. of Borrow tool $borrowedCount"
-        binding.tvToolAvaialbleCount.text = "Total No. of Available tool $availableCount"
-
-
-        binding.btnLoaningOut.setOnClickListener {
-            clickListener(toolDetailsEntity)
-
+        binding.btnReturn.setOnClickListener {
+            clickListener(friendDetailsEntity)
         }
         binding.executePendingBindings()
     }
